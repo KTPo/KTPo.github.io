@@ -124,3 +124,8 @@ section{
   margin-right: auto;
   width: 40%;
 }
+.container{
+    width: 80%;
+    margin:auto;
+    overflow:hidden;
+}
