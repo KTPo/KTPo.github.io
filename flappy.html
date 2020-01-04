@@ -1,0 +1,180 @@
+
+<!Doctype: HTML w/ Processing>
+
+<html>
+
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Processing Demo</title>
+      <script type="text/javascript" src="js/processing.js"></script>
+  </head>
+  
+  <body>
+    <h1>PUT YOUR TITLE HERE</h1>
+    <p>ADD DESCRIPTION HERE</p>
+    
+    <script type="text/processing">
+    
+/*
+ * FLAPPY CORGI
+ * Author: Khanh Tran
+ * 
+ *
+*/
+
+
+
+
+PImage bg, charac, boneTop, boneBottom, titleScreen;
+float bgx, bgy, cx, cy, g, Vcy;
+int[] pipeX, pipeY; //DECLARE two arrays
+int gameState, score;
+
+//RUNS ONLY ONCE
+void setup() 
+{
+  size(800, 800);
+}
+/*
+  bg = loadImage("./imgForFlappy/bg.png");
+  charac = loadImage("./imgForFlappy/charac.png");
+  boneTop = loadImage("./imgForFlappy/boneTop.png");
+  boneBottom = loadImage("./imgForFlappy/boneBottom.png");
+  titleScreen = loadImage("./imgForFlappy/titleScreen.png");
+  cx = 100;
+  cy = 50;
+  g = 1; //Gravity Variable == Speed of Downward Acceleration
+  pipeX = new int[4]; //[0,0,0,0] : [0,1,2,3]
+  pipeY = new int[pipeX.length];
+  for(int i = 0; i < pipeX.length; i++)
+  {
+    pipeX[i] = width + 250*i;
+    pipeY[i] = (int)random(-500,0);
+  }
+  gameState = -1;
+}
+
+
+void draw()
+{
+  if(gameState == - 1)
+  {
+    titleScreen();
+  }
+  else if(gameState==0)
+  {
+    setBg();
+    setPipes();
+    charac();
+    score();
+  }
+  else
+  {
+    gameOver();
+  }
+}
+
+void gameOver()
+{
+  textAlign(CENTER);
+  fill(255);
+  textSize(30);
+  text("GAME OVER", height/2, width/2-20);
+  textSize(15);
+  text("Press any key to restart.", height/2,width/2+10);
+  if(mousePressed)
+  {
+    setup();
+    score = 0;
+    cy = height/3;
+    gameState=0;
+    g = 1;
+  }
+}
+
+void score()
+{
+  fill(0);
+  textSize(32);
+  text("Score: " + score, width-75,40);
+}
+
+void titleScreen()
+{
+  image(titleScreen,0,0);
+  textAlign(CENTER);
+  textSize(40);
+  if(mousePressed)
+  {
+    cy = height/3;
+    gameState = 0;
+  }
+}
+void setPipes()
+{
+  for(int i = 0; i < pipeX.length; i++)
+  {
+    image(boneTop, pipeX[i], pipeY[i]);
+    image(boneBottom, pipeX[i], pipeY[i] + 900);
+    pipeX[i]-= 4;
+    if(pipeX[i] < -200)
+    {
+      pipeX[i] = width;
+    }
+    if(cx > (pipeX[i] - 40) && cx < pipeX[i] + 93)
+    {
+      if(!(cy > pipeY[i] + 634 && cy < pipeY[i] + (900 - 48)))
+       {
+         gameState = 1;
+       }
+       else if(cx ==pipeX[i] || cx == pipeX[i] + 2)
+       {
+         score++;
+       }
+    }
+  }
+}
+
+void charac()
+{
+  image(charac, cx,cy);
+  cy = cy + Vcy;
+  Vcy = Vcy + g; //adding itself = acceleration 
+  if(cy > height || cy < 0)
+  {
+    text("bruh", 50,50);
+    gameState =1;
+  }
+}
+void mousePressed()
+{
+  Vcy = -15; //actually jumps up
+}
+void setBg()
+{
+  image(bg, bgx, bgy);
+  image(bg, bgx + bg.width, bgy);
+  bgx = bgx - 1;
+  if(bgx < -bg.width)
+  {
+    bgx = 0; //Resets once first img is done
+  }
+}
+
+//ANIMATION DIFFERENT WHEN CLICK????//
+//EXTEND THE BONE
+//13:32 #5
+//MAKE AN ACTUAL TITLE SCREEN
+
+    
+    
+
+
+    </script>
+    <canvas id="sketch" style="border: 1px solid black;"></canvas>
+    
+  </body>
+  
+</html>
+
+
