@@ -129,3 +129,7 @@ section{
     margin:auto;
     overflow:hidden;
 }
+.gameTitle{
+    color:#f2f0eb;
+    padding-bottom:10px;
+}
