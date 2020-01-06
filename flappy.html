@@ -77,14 +77,16 @@
         textSize(30);
         text("GAME OVER", height/2, width/2-20);
         textSize(15);
-        text("Press any key to restart.", height/2,width/2+10);
-        if(mousePressed)
+        text("Press the RIGHT MOUSE BUTTON to restart.", height/2,width/2+10);
+        if(mousePressed && (mouseButton == RIGHT))
         {
           setup();
           score = 0;
           cy = height/3;
           gameState=0;
           g = 1;
+          
+          
         }
       }
       
