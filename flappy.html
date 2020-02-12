@@ -26,6 +26,7 @@
       float bgx, bgy, cx, cy, g, Vcy;
       int[] pipeX, pipeY; //DECLARE two arrays
       int gameState, score;
+      int highScore = 0;
       
       //RUNS ONLY ONCE
       void setup()
@@ -81,9 +82,10 @@
         if(mousePressed && (mouseButton == RIGHT))
         {
           setup();
-          score = 0;
+          //score = 0;
           cy = height/3;
           gameState=0;
+          score = 0;
           g = 1;
           
           
@@ -92,9 +94,14 @@
       
       void showScore()
       {
+        
         fill(0);
         textSize(32);
         text("Score: " + score, width-75,40);
+        if(score > highScore){
+          highScore = score;
+        }
+        text("High Score: " + highScore, width-112,80)
       }
       
       void startScreen()
