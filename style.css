@@ -14,10 +14,14 @@ nav{
 }
 
 .logo{
-    color:#273138;
     text-transform: uppercase;
     letter-spacing:5px;
     font-size:20px;
+}
+
+.logo a{
+   color:#273138; 
+   text-decoration:none;
 }
 
 .nav-links{
