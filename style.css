@@ -4,15 +4,22 @@
     box-sizing:border-box;
 }
 /* nav bar */
+body{
+    background-color:#e3dfdb;
+    font:15px/1.5 'Karla',sans-serif;
+}
 nav{
     display:flex;
     justify-content:space-around;
     align-items:center;
     min-height:8vh;
     font-family: 'Rubik', sans-serif;
-    margin-top:20px;
-    margin-bottom:20px;
-    background-color:#e3dfdb;/*#e3dfdb*/
+    background-color:#ffffff;/*#e3dfdb*/
+    
+    padding-top:40px;
+    padding-bottom:10px;
+    
+ 
 }
 
 .logo{
@@ -37,7 +44,7 @@ nav{
 }
 
 .nav-links .active a{
-    color:#2252a3;
+    color:#a39990;
     font-weight:bold;
 }
 .nav-links a{
@@ -48,11 +55,11 @@ nav{
     font-size:14px;
 }
 .nav-links .active a:hover{
-    color:#326ccf;
+    color:#c7b9ad;
     text-decoration:underline;
 }
 .nav-links a:hover{
-    color:#475863;
+    color:#555c61;
     text-decoration:underline;
 }
 
@@ -90,13 +97,18 @@ a #active{
         right:0px;
         height:92vh;
         top:8vh;
-        background-color:#e3dfdb;
+        background-color:#ffffff;
+        align-items:center;
         display:flex;
         flex-direction:column;
-        align-items:center;
         width:50%;
         transform:translateX(100%);
         transition: 0.5s ease-in;
+        
+        padding-top:35px;
+        /*padding-left:5px;
+        padding-right:5px;*/
+       
         
     }
     .nav-links li{
@@ -133,3 +145,116 @@ a #active{
 }
 
 /* end nav bar*/
+
+/*Global*/
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+}
+
+.button_1{
+    height:38px;
+    background:#e3dfdb;
+    border:none;
+    padding-left:20px;
+    padding-right:20px;
+    color:#273138;
+}
+
+.dark{
+    padding:15px;
+    background:#ffffff;
+    color:#273138;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+/* Showcase */
+
+#showcase{
+    min-height:400px;
+    background:url('./previewImages/alaska.png') no-repeat ;
+    text-align:center;
+    color:#ffffff;
+    
+}
+
+#showcase h1{
+    margin-top:100px;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+#showcase p{
+    font-size:20px;
+}
+
+#newsletter{
+    padding:15px;
+    color:#273138;
+    background:#ffffff;
+}
+
+#newsletter h1{
+    float:left;
+}
+
+#newsletter form{
+    float:right;
+    margin-top:15px;
+}
+
+#newsletter input[type="email"]{
+    padding:4px;
+    height:25px;
+    width:250px;
+}
+
+#boxes{
+    margin-top:20px;
+}
+
+#boxes .box{
+    float:left;
+    width:30%;
+    padding:10px;
+    text-align:center;
+    
+}
+
+#boxes .box img{
+    width:90px;
+}
+
+footer{
+    padding:20px;
+    margin-top:20px;
+    color:#273138;
+    background-color:#ffffff;
+    text-align:center;
+}
+
+
+/*main column*/
+article #main-col{
+    float:right;
+    width:65%;
+    padding:20px;
+}
+
+/*side bar*/
+
+aside #sidebar{
+    float:left;
+    width:30%;
+    margin-top:10px;
+}
+
+ul #services li{
+   list-style:none;
+   /*text-decoration:none;*/
+   padding:20px;
+   /*border:#e3dfdb;
+   margin-bottom:5px;
+   background:#f0ece9;*/
+}
