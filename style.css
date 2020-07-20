@@ -10,7 +10,9 @@ nav{
     align-items:center;
     min-height:8vh;
     font-family: 'Rubik', sans-serif;
-    background-color:#dbe8f9;
+    margin-top:20px;
+    margin-bottom:20px;
+    background-color:#e3dfdb;/*#e3dfdb*/
 }
 
 .logo{
@@ -88,7 +90,7 @@ a #active{
         right:0px;
         height:92vh;
         top:8vh;
-        background-color:#dbe8f9;
+        background-color:#e3dfdb;
         display:flex;
         flex-direction:column;
         align-items:center;
