@@ -3,7 +3,7 @@
     padding:0px;
     box-sizing:border-box;
 }
-
+/* nav bar */
 nav{
     display:flex;
     justify-content:space-around;
@@ -30,12 +30,28 @@ nav{
     list-style:none;
 }
 
+.nav-links .active a{
+    color:#2252a3;
+    font-weight:bold;
+}
 .nav-links a{
     color:#273138;
     text-decoration:none;
     letter-spacing:3px;
     font-weight:bold;
     font-size:14px;
+}
+.nav-links .active a:hover{
+    color:#326ccf;
+    text-decoration:underline;
+}
+.nav-links a:hover{
+    color:#475863;
+    text-decoration:underline;
+}
+
+a #active{
+    color:white;
 }
 
 .burger{
@@ -74,7 +90,7 @@ nav{
         align-items:center;
         width:50%;
         transform:translateX(100%);
-        transition:transform 0.5s ease-in;
+        transition: 0.5s ease-in;
         
     }
     .nav-links li{
@@ -109,3 +125,5 @@ nav{
 .toggle .line3{
     transform:rotate(45deg) translate(-5px,-6px);
 }
+
+/* end nav bar*/
